@@ -1,8 +1,8 @@
-"""
-ClovaCall
-Copyright 2020-present NAVER Corp.
-MIT license
-"""
+#"""
+#ClovaCall
+#Copyright 2020-present NAVER Corp.
+#MIT license
+#"""
 #!/bin/bash
 
 MAIN_DIR=${0%/*}

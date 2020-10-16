@@ -1,8 +1,8 @@
-"""
-ClovaCall
-Copyright 2020-present NAVER Corp.
-MIT license
-"""
+#"""
+#ClovaCall
+#Copyright 2020-present NAVER Corp.
+#MIT license
+#"""
 #!/bin/bash
 
 MAIN_DIR=${0%/*}
@@ -83,7 +83,7 @@ fi
 
 
 CUDA_VISIBLE_DEVICES=$CUDA_DEVICE_ID \
-python3.6 -u $TARGET_CODE \
+python -u $TARGET_CODE \
 --batch_size $BATCH_SIZE \
 --num_workers $CPU_SIZE \
 --num_gpu $GPU_SIZE \
