@@ -2,10 +2,13 @@ import re
 import json
 data = []
 
-with open('dev.trn', 'r') as f:
-
-    while True:
+COUNT = 5000
+cnt = 0
+with open('train.trn', 'r') as f:
+    while cnt < COUNT:
+        cnt = cnt + 1
         line = f.readline()
+        print(line)
         if not line: break
         fileAndAnswer = line.split("::")
         filename = fileAndAnswer[0].split('/')[-1].rstrip()
@@ -18,5 +21,5 @@ with open('dev.trn', 'r') as f:
             'text': answer.replace('/', '').rstrip()
         })
 
-with open('test.json', 'w') as js:
+with open('model_train.json', 'w') as js:
     json.dump(data, js, ensure_ascii=False, indent=4)

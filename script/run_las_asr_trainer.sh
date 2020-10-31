@@ -29,10 +29,10 @@ fi
 ##	Careful while modifying lines above.
 ################################################################
 
-TRAIN_FILE=data/ClovaCall/train_ClovaCall.json
-TEST_FILE=data/ClovaCall/test_ClovaCall.json
+TRAIN_FILE=/learning/clova/train_ClovaCall.json
+TEST_FILE=/learning/clova/test_ClovaCall.json
 LABEL_FILE=data/kor_syllable.json
-DATASET_PATH=data/ClovaCall/clean
+DATASET_PATH=/learning/clova/clean
 
 CUDA_DEVICE_ID=0
 
@@ -97,6 +97,7 @@ python3 -u $TARGET_CODE \
 --train-file $TRAIN_FILE --test-file-list $TEST_FILE \
 --labels-path $LABEL_FILE \
 --dataset-path $DATASET_PATH \
+--epochs $EPOCHS \
 --cuda --save-folder $CUR_MODEL_PATH --model-path $CUR_MODEL_PATH/final.pth --log-path $LOG_CHILD_PATH | tee $LOG_FILE 
 
 # If you want to continue training from previous model or finetuning, add these commands.
